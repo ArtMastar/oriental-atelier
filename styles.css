@@ -533,6 +533,9 @@ nav ul li a {
     transform: scale(0.95);
 }
 
+.cart-icon.bump {
+    transform: scale(1.2);
+}
 
 .dropdown-content {
     display: none;

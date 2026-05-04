@@ -322,12 +322,10 @@ function attachProductEvents() {
 
         addToCartBtn.onclick = () => {
 
-            // 🎯 Bounce effect
-            addToCartBtn.classList.add("bounce");
+            const img = product.querySelector("img");
 
-            setTimeout(() => {
-                addToCartBtn.classList.remove("bounce");
-            }, 300);
+            // 🔥 Trigger animation
+            flyToCart(img);
 
             const name = product.querySelector("h2").textContent;
             const price = parseInt(
@@ -688,3 +686,42 @@ rightBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+function flyToCart(imgElement) {
+    const cart = document.querySelector(".cart-icon");
+
+    const imgRect = imgElement.getBoundingClientRect();
+    const cartRect = cart.getBoundingClientRect();
+
+    const flyingImg = imgElement.cloneNode(true);
+
+    flyingImg.style.position = "fixed";
+    flyingImg.style.left = `${imgRect.left}px`;
+    flyingImg.style.top = `${imgRect.top}px`;
+    flyingImg.style.width = `${imgRect.width}px`;
+    flyingImg.style.height = `${imgRect.height}px`;
+    flyingImg.style.transition = "all 0.8s ease-in-out";
+    flyingImg.style.zIndex = "3000";
+    flyingImg.style.borderRadius = "10px";
+
+    document.body.appendChild(flyingImg);
+
+    // Trigger movement
+    setTimeout(() => {
+        flyingImg.style.left = `${cartRect.left}px`;
+        flyingImg.style.top = `${cartRect.top}px`;
+        flyingImg.style.width = "30px";
+        flyingImg.style.height = "30px";
+        flyingImg.style.opacity = "0.5";
+    }, 10);
+
+    // Remove after animation
+    setTimeout(() => {
+        flyingImg.remove();
+    }, 800);
+
+    setTimeout(() => {
+        cart.classList.add("bump");
+        setTimeout(() => cart.classList.remove("bump"), 300);
+    }, 700);
+}

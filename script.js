@@ -321,6 +321,14 @@ function attachProductEvents() {
         };
 
         addToCartBtn.onclick = () => {
+
+            // 🎯 Bounce effect
+            addToCartBtn.classList.add("bounce");
+
+            setTimeout(() => {
+                addToCartBtn.classList.remove("bounce");
+            }, 300);
+
             const name = product.querySelector("h2").textContent;
             const price = parseInt(
                 product.querySelector("p").textContent.replace("Ksh. ", "")
@@ -390,11 +398,16 @@ function toggleCart() {
 
 function filterProducts(category) {
     if (category === "all") {
-        renderProducts(products);
+
+        const sorted = [...products].sort((a, b) => a.price - b.price);
+        renderProducts(sorted);
+
     } else {
+
         const filtered = products.filter(
             product => product.category === category
         );
+
         renderProducts(filtered);
     }
 }

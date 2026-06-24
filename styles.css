@@ -382,7 +382,9 @@ nav ul li a {
     background: rgb(255, 255, 255);
     text-align: left;
     color: rgb(1, 1, 112);
-    border-radius: var(--outer-border-radius);
+    border-radius:0;
+    border-color: #3d3e4e;
+    border: 1px
     padding: var(--border-padding);
 }
 

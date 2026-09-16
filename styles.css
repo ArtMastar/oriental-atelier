@@ -31,7 +31,6 @@ a{
 
 /* Header Styles */
 header {
-    display: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -45,6 +44,7 @@ header {
 }
 
 .nav-container {
+    diplay: hidden;
     width: 95%;
     display: flex;
     align-items: center;   /* vertical center */

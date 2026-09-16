@@ -31,6 +31,7 @@ a{
 
 /* Header Styles */
 header {
+    display: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -139,13 +140,11 @@ nav ul li a {
     position: sticky;
     top: 80px;
     z-index: 900;
-
-    width: 100%;
-
+    width: 80%;
+    border-radius: 50px;
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 

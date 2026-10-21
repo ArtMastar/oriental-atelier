@@ -141,7 +141,7 @@ nav ul li a {
 .category-filter-container {
     position: -webkit-sticky;
     position: sticky;
-    top: 60px; /* Aligns directly below the 60px header */
+    top: 70px; /* Aligns directly below the 60px header */
     z-index: 900;
     width: 50%;
     background: rgba(255, 255, 255, 0.7);

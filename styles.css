@@ -14,14 +14,17 @@
 }
 
 html, body {
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: var(--font-family);
     background-color: var(--text-color);
     margin: 0;
-    padding: 0; 
+    padding: 0;
+    width: 100%;
+    position: relative;
 }
 
 a{
@@ -136,6 +139,7 @@ nav ul li a {
 }
 
 .category-filter-container {
+    position: -webkit-sticky;
     position: sticky;
     top: 60px; /* Aligns directly below the 60px header */
     z-index: 900;

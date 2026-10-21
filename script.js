@@ -936,3 +936,32 @@ function flyToCart(imgElement) {
         setTimeout(() => cart.classList.remove("bump"), 300);
     }, 700);
 }
+
+/* ==========================================================
+   STICKY CATEGORY FILTER (Hidden on scroll down, visible on scroll up)
+========================================================== */
+
+let lastScrollY = window.scrollY;
+const categoryContainer = document.querySelector(".category-filter-container");
+
+window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    // Trigger only after scrolling past the hero section
+    if (currentScrollY > 200) {
+        if (currentScrollY > lastScrollY) {
+            // Scrolling DOWN -> Hide the category filter
+            categoryContainer.classList.add("hide-sticky");
+        } else {
+            // Scrolling UP -> Reveal and fix below the header
+            categoryContainer.classList.remove("hide-sticky");
+            categoryContainer.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.1)";
+        }
+    } else {
+        // At the top of page -> Show normally without shadow
+        categoryContainer.classList.remove("hide-sticky");
+        categoryContainer.style.boxShadow = "none";
+    }
+
+    lastScrollY = currentScrollY;
+});

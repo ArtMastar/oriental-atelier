@@ -241,6 +241,7 @@ nav ul li a {
     border: none;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     transition: flex 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -262,7 +263,6 @@ nav ul li a {
 }
 
 .search-container input:focus {
-    width: 300px;
     background: white;
     border-color: #693d04;
     box-shadow: 0 0 0 2px rgba(105, 61, 4, 0.08);
@@ -270,7 +270,8 @@ nav ul li a {
 
 .search-container input.expanded {
     position: absolute;
-    left: 0;
+    right: 0;
+    left: auto;
     top: 50%;
     transform: translateY(-50%);
     width: 100% !important;
@@ -284,7 +285,8 @@ nav ul li a {
 .category-filter.search-active .category-wrapper {
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.95);
+    visibility: hidden;
+    transition: opacity 0.3s ease;
 }
 
 .category-filter.search-active .search-container {

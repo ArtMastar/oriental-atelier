@@ -87,7 +87,7 @@ nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    text-align: left;
+    text-align: center;
     height: 80vh;
 
     background:
@@ -114,10 +114,10 @@ nav ul li a {
     margin-bottom: 10px;
 }
 #hero-intro{
-    height: 60vh;
+    height: 75vh;
     width: 35%;
     margin: 20px;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: left;

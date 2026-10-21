@@ -269,7 +269,12 @@ nav ul li a {
 }
 
 .search-container input.expanded {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 100% !important;
+    z-index: 10;
     background: white;
     border-color: #693d04;
     box-shadow: 0 4px 15px rgba(105, 61, 4, 0.12);
@@ -280,8 +285,6 @@ nav ul li a {
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);
-    width: 0;
-    flex: 0 0 0;
 }
 
 .category-filter.search-active .search-container {

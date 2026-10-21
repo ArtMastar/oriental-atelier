@@ -43,7 +43,7 @@ header {
     display: flex;
     align-items: center; /* vertical center */
     justify-content:left;
-    background: rgb(255, 254, 254,0.2);
+    background: rgb(255, 254, 254,);
 }
 
 .nav-container {
@@ -143,8 +143,8 @@ nav ul li a {
     position: sticky;
     top: 60px; /* Aligns directly below the 60px header */
     z-index: 900;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
+    width: 50%;
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;

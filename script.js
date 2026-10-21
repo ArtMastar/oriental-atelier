@@ -807,6 +807,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("search-input").addEventListener("input", function () {
         searchProducts(this.value);
     });
+
+    // 🔍 EXPANDING SEARCH INPUT LOGIC (Add this block)
+    const searchInput = document.getElementById("search-input");
+    const categoryFilterBar = document.querySelector(".category-filter");
+
+    searchInput.addEventListener("focus", () => {
+        searchInput.classList.add("expanded");
+        categoryFilterBar.classList.add("search-active");
+    });
+
+    searchInput.addEventListener("blur", () => {
+        setTimeout(() => {
+            if (searchInput.value.trim() === "") {
+                searchInput.classList.remove("expanded");
+                categoryFilterBar.classList.remove("search-active");
+            }
+        }, 200);
+    });
 });
 
 /* Dragging & Drop Functionality for Cart Icon */

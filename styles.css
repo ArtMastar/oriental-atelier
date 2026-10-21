@@ -255,7 +255,7 @@ nav ul li a {
 
 .category-wrapper {
     flex: 1;
-    color: blue;
+    color: rgb(3, 3, 71);
 }
 
 .category-wrapper::-webkit-scrollbar {

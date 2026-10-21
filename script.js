@@ -939,7 +939,7 @@ function flyToCart(imgElement) {
 
 /* ==========================================================
    STICKY CATEGORY FILTER (Hidden on scroll down, visible on scroll up)
-========================================================== */
+========================================================== 
 
 let lastScrollY = window.scrollY;
 const categoryContainer = document.querySelector(".category-filter-container");
@@ -964,4 +964,4 @@ window.addEventListener("scroll", () => {
     }
 
     lastScrollY = currentScrollY;
-});
+}); */

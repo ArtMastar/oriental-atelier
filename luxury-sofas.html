@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="oa.jpg">
+    <meta name="description" content="Oriental Atelier Prestige - Bespoke Motorized Recliners & Electric Sofas for the Elite.">
+    <title>Prestige Collection | Oriental Atelier</title>
+    <!-- Google Fonts for High-End Serif & Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="luxury-styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="luxury-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="oa.jpg" alt="OA Logo">
+                </a>
+            </div>
+            <div class="brand-title">ORIENTAL ATELIER <span class="sub-tag">PRESTIGE</span></div>
+            <div class="nav-links">
+                <a href="index.html">Main Catalog</a>
+                <a href="https://wa.me/254745485817" class="vip-concierge-link"><i class="fab fa-whatsapp"></i> VIP Concierge</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cinematic Hero Section -->
+    <section class="luxury-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="eyebrow">The Ultra-Luxury Collection</span>
+            <h1>Artistry in Motion.</h1>
+            <p>Bespoke Italian leather motor-recliners and architectural electric sanctuaries, crafted exclusively for the discerning few.</p>
+            <a href="#gallery" class="explore-btn">Explore The Private Catalog</a>
+        </div>
+    </section>
+
+    <!-- Filter & Collection Bar -->
+    <section class="prestige-filter-bar">
+        <div class="filter-wrapper">
+            <button class="p-btn active" data-category="all">All Masterpieces</button>
+            <button class="p-btn" data-category="electric">Electric Motion</button>
+            <button class="p-btn" data-category="recliners">Executive Recliners</button>
+            <button class="p-btn" data-category="sectional">Modular Sanctuaries</button>
+        </div>
+    </section>
+
+    <!-- Luxury Product Gallery -->
+    <section class="prestige-gallery" id="gallery">
+        <!-- Injected via luxury-script.js -->
+    </section>
+
+    <!-- Bespoke Inquiry Modal -->
+    <div id="luxuryModal" class="lux-modal">
+        <div class="lux-modal-content">
+            <span class="lux-close">&times;</span>
+            <div class="lux-modal-grid">
+                <div class="lux-modal-img">
+                    <img id="luxModalImage" src="" alt="">
+                </div>
+                <div class="lux-modal-details">
+                    <span class="badge">Limited Edition</span>
+                    <h2 id="luxModalName"></h2>
+                    <p class="lux-price" id="luxModalPrice"></p>
+                    <p class="lux-desc" id="luxModalDesc"></p>
+                    <div class="customization-notes">
+                        <h4>Bespoke Options Available:</h4>
+                        <ul>
+                            <li>Full-Grain Aniline Italian Leather or Cashmere Velvet</li>
+                            <li>Integrated USB-C & Wireless Charging Ports</li>
+                            <li>Zero-Gravity Weightless Recline Technology</li>
+                        </ul>
+                    </div>
+                    <button class="concierge-order-btn" id="conciergeOrderBtn">
+                        <i class="fab fa-whatsapp"></i> Inquire via Private Concierge
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Luxury Footer -->
+    <footer class="luxury-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>ORIENTAL ATELIER</h3>
+                <p>Nairobi • Dubai • Milan</p>
+            </div>
+            <div class="footer-contact">
+                <p>Private Client Line: <a href="tel:+254745485817">+254 745 485 817</a></p>
+                <p>Email: concierge@orientalatelier.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2026 &copy; ORIENTAL ATELIER PRESTIGE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="luxury-script.js"></script>
+</body>
+</html>

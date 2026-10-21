@@ -111,12 +111,12 @@ nav ul li a {
 
 .hero h1 {
     font-size: 48px;
-    margin-top: 5px;
+    padding: 10px;
     margin-bottom: 10px;
 }
 #hero-intro{
-    height: 75vh;
-    width: 35%;
+    height: 70vh;
+    width: 65%;
     margin: 20px;
     text-align: center;
     display: flex;
@@ -140,7 +140,7 @@ nav ul li a {
     z-index: 900;
     width: 80%;
     border-radius: 50px;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgb(13, 2, 77);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);

@@ -144,10 +144,10 @@ nav ul li a {
     top: 70px; /* Aligns directly below the 60px header */
     z-index: 900;
     width: 100%;
-    background: transparent;
+    background: none;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
     box-sizing: border-box;
 }
 
@@ -164,8 +164,8 @@ nav ul li a {
     align-content: center;
     flex-wrap: nowrap;
     flex-direction: row;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
@@ -254,11 +254,11 @@ nav ul li a {
 }
 
 .search-container input::placeholder {
-    color: #777;
+    color: #090546;
 }
 
 .search-container input:focus {
-    width: 140px;
+    width: 48%;
     background: white;
     border-color: #693d04;
     box-shadow: 0 0 0 2px rgba(105, 61, 4, 0.08);

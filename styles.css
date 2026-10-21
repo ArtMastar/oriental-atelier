@@ -117,7 +117,8 @@ nav ul li a {
 #hero-intro{
     height: 70vh;
     width: 65%;
-    margin: 20px;
+    margin-top: 80px;
+    margin-bottom: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -134,31 +135,28 @@ nav ul li a {
     color: var(--text-color);
 }
 
-.category-filter-container{
+.category-filter-container {
     position: sticky;
     top: 80px;
     z-index: 900;
-    width: 80%;
+    width: 100%;
     border-radius: 50px;
-    background: rgb(13, 2, 77);
+    background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .category-filter {
-    width: 100%;
-    max-width: 1200px;
-
+    width: 50%;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 20px;
-
     padding: 12px 20px;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
 }
 
 .category-filter.is-sticky {
@@ -229,23 +227,20 @@ nav ul li a {
     flex: 1;
     min-width: 0;
     position: relative;
-    border-left: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .search-container input {
-    width: 100%;
+    width: 42px;
     height: 42px;
     box-sizing: border-box;
-    padding: 0 15px;
-    border-radius: 15px;
+    padding: 0 10px;
+    border-radius: 50px;
     background: rgba(255, 255, 255, 0.9);
-    color: #333;
+    color: #040b33;
     font-size: 14px;
     outline: none;
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .search-container input::placeholder {
@@ -260,6 +255,7 @@ nav ul li a {
 
 .category-wrapper {
     flex: 1;
+    color: blue;
 }
 
 .category-wrapper::-webkit-scrollbar {

@@ -43,7 +43,7 @@ header {
     display: flex;
     align-items: center; /* vertical center */
     justify-content:left;
-    background: rgb(255, 254, 254,);
+    background: rgb(255, 254, 254);
 }
 
 .nav-container {

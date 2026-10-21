@@ -171,6 +171,9 @@ nav ul li a {
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
     border-radius: 50px;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden; /* Keeps expanded search contained within the pill */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .category-filter-container.hide-sticky {
@@ -238,6 +241,9 @@ nav ul li a {
     min-width: 0;
     position: relative;
     border: none;
+    display: flex;
+    align-items: center;
+    transition: flex 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .search-container input {
@@ -250,7 +256,7 @@ nav ul li a {
     color: #040b33;
     font-size: 14px;
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .search-container input::placeholder {
@@ -264,9 +270,33 @@ nav ul li a {
     box-shadow: 0 0 0 2px rgba(105, 61, 4, 0.08);
 }
 
+.search-container input.expanded {
+    width: 100% !important;
+    background: white;
+    border-color: #693d04;
+    box-shadow: 0 4px 15px rgba(105, 61, 4, 0.12);
+}
+
+/* Hide category icons smoothly when search is active */
+.category-filter.search-active .category-wrapper {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    width: 0;
+    flex: 0 0 0;
+}
+
+.category-filter.search-active .search-container {
+    flex: 1;
+}
+
 .category-wrapper {
     flex: 1;
     color: rgb(3, 3, 71);
+    position: relative;
+    overflow-x: auto;
+    scrollbar-width: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .category-wrapper::-webkit-scrollbar {

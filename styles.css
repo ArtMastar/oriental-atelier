@@ -86,7 +86,7 @@ nav ul li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
     height: 80vh;
 
@@ -111,6 +111,7 @@ nav ul li a {
 
 .hero h1 {
     font-size: 48px;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 #hero-intro{

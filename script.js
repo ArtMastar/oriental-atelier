@@ -807,39 +807,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("search-input").addEventListener("input", function () {
         searchProducts(this.value);
     });
-
-    // Category Buttons Filtering Integration
-    const categoryButtons = document.querySelectorAll(".category-icons button");
-    categoryButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            categoryButtons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-            filterProducts(btn.dataset.category);
-        });
-    });
-
-    // Expanding Search Input Logic
-    const searchInput = document.getElementById("search-input");
-    const categoryFilterBar = document.querySelector(".category-filter");
-
-    searchInput.addEventListener("focus", () => {
-        searchInput.classList.add("expanded");
-        categoryFilterBar.classList.add("search-active");
-    });
-
-    searchInput.addEventListener("blur", () => {
-        // Only contract if the search input is empty
-        setTimeout(() => {
-            if (searchInput.value.trim() === "") {
-                searchInput.classList.remove("expanded");
-                categoryFilterBar.classList.remove("search-active");
-            }
-        }, 200); // Small timeout to allow clicks on results if needed
-    });
-
-    searchInput.addEventListener("input", function () {
-        searchProducts(this.value);
-    });
 });
 
 /* Dragging & Drop Functionality for Cart Icon */

@@ -358,7 +358,7 @@ const products = [
     {
         id: 37,
         name: "Salon Styling Chair",
-        price: '18500',
+        price: 18500,
         images: [
             "products/chairs/57A(1).webp",
             "/products/chairs/57A.webp"
@@ -370,7 +370,7 @@ const products = [
     {
         id: 38,
         name: "Conference Chairs",
-        price: '3500',
+        price: 3500,
         images: [
             "products/chairs/201B(1).webp",
             "/products/chairs/201B.webp"
@@ -382,7 +382,7 @@ const products = [
     {
         id: 39,
         name: "Chrome Visitor Office Chair",
-        price: '4400',
+        price: 4400,
         images: [
             "/products/chairs/803.webp",
             "/products/chairs/803.webp"
@@ -394,7 +394,7 @@ const products = [
     {
         id: 40,
         name: "Mesh Visitor Conference Chair",
-        price: '7200',
+        price: 7200,
         images: [
             "/products/chairs/805W(1).webp",
             "/products/chairs/805W.webp"
@@ -406,7 +406,7 @@ const products = [
     {
         id: 41,
         name: "Executive Ergonomic Office Chair",
-        price: '28500',
+        price: 28500,
         images: [
             "/products/chairs/1024(1).webp",
             "/products/chairs/1024.webp"
@@ -418,7 +418,7 @@ const products = [
     {
         id: 42,
         name: "Executive Mesh Office Chair",
-        price: '14600',
+        price: 14600,
         images: [
             "/products/chairs/2903(1).webp",
             "/products/chairs/2903.webp"
@@ -426,11 +426,11 @@ const products = [
         category: "chairs",
         "description": "A breathable mesh executive office chair with ergonomic back support and adjustable features, ideal for long working hours in modern offices.",
         "keywords": ["mesh office chair", "executive chair","2903", "ergonomic", "office chair", "black", "adjustable", "swivel", "lumbar support", "breathable", "professional", "manager", "workspace", "computer chair", "modern", "office furniture", "comfortable", "corporate", "chair", "premium", "home office"]
-  },
+    },
     {
         id: 43,
         name: "Mesh Visitor Office Chair",
-        price: '7300',
+        price: 7300,
         images: [
             "/products/chairs/4019(1).webp",
             "/products/chairs/4019.webp"
@@ -442,7 +442,7 @@ const products = [
     {
         id: 44,
         name: "Brown Executive Office Chair",
-        price: '27000',
+        price: 27000,
         images: [
             "/products/chairs/A106(2).webp",
             "/products/chairs/A106(1).webp"
@@ -454,7 +454,7 @@ const products = [
     {
         id: 45,
         name: "High-Back Executive Chair",
-        price: '45600',
+        price: 45600,
         images: [
             "/products/chairs/A8003-1(1).webp",
             "/products/chairs/A8003-1.webp"
@@ -466,7 +466,7 @@ const products = [
     {
         id: 46,
         name: "Luxury Executive Leather Chair",
-        price: '18200',
+        price: 18200,
         images: [
             "/products/chairs/B19(1).webp",
             "/products/chairs/B19.webp"
@@ -478,7 +478,7 @@ const products = [
     {
         id: 47,
         name: "Executive Visitor Office Chair",
-        price: '8400',
+        price: 8400,
         images: [
             "/products/chairs/820(1).webp",
             "/products/chairs/820.webp"
@@ -490,7 +490,7 @@ const products = [
     {
         id: 48,
         name: "Luxury Reclining Executive Chair",
-        price: '8800',
+        price: 8800,
         images: [
             "/products/chairs/886(1).webp",
             "/products/chairs/886.webp"
@@ -502,7 +502,7 @@ const products = [
     {
         id: 49,
         name: "Executive Leather Office Chair",
-        price: '12800',
+        price: 12800,
         images: [
             "/products/chairs/985(1).webp",
             "/products/chairs/985.webp"
@@ -514,7 +514,7 @@ const products = [
     {
         id: 50,
         name: "Executive Cantilever Meeting Chair",
-        price: '12000',
+        price: 12000,
         images: [
             "/products/chairs/8086(1).webp",
             "/products/chairs/8086.webp"
@@ -526,7 +526,7 @@ const products = [
     {
         id: 51,
         name: "Mesh Training Conference Chair",
-        price: '13500',
+        price: 13500,
         images: [
             "/products/chairs/9011(1).webp",
             "/products/chairs/9011.webp"
@@ -538,7 +538,7 @@ const products = [
     {
         id: 52,
         name: "Three-Seater Upholstered Waiting Bench",
-        price: '27000',
+        price: 27000,
         images: [
             "/products/chairs/A88(1).webp",
             "/products/chairs/A88.webp"
@@ -550,7 +550,7 @@ const products = [
     {
         id: 53,
         name: "Three-Seater Airport Waiting Bench",
-        price: '--',
+        price: 0,
         images: [
             "/products/chairs/A89(1).webp",
             "/products/chairs/A89.webp"
@@ -560,7 +560,6 @@ const products = [
         "keywords": ["airport bench","A89", "waiting bench", "three seater", "visitor seating", "steel bench", "grey", "hospital", "office", "commercial", "public seating", "durable", "waiting room", "modern", "office furniture", "reception", "bench", "chair", "institution", "professional", "guest seating"]
     }
 ];
-
 
 /* ==============================
    2️⃣ RENDER PRODUCTS
@@ -574,10 +573,12 @@ function renderProducts(filteredProducts = products) {
         const card = document.createElement("div");
         card.className = `product ${product.category}`;
 
+        const displayPrice = typeof product.price === 'number' && product.price > 0 ? `Ksh. ${product.price}` : "Price on Request";
+
         card.innerHTML = `
             <img src="${product.images ? product.images[0] : product.image}" alt="${product.name}">
             <h2>${product.name}</h2>
-            <p>Ksh. ${product.price}</p>
+            <p>${displayPrice}</p>
 
             <div class="quantity-control">
                 <button class="decrease">-</button>
@@ -589,23 +590,21 @@ function renderProducts(filteredProducts = products) {
         `;
 
         card.addEventListener("click", (e) => {
-
-    if (
-        !e.target.classList.contains("atc") &&
-        !e.target.classList.contains("increase") &&
-        !e.target.classList.contains("decrease") &&
-        !e.target.classList.contains("quantity")
-    ) {
-        openModal(product);
-    }
-});
+            if (
+                !e.target.classList.contains("atc") &&
+                !e.target.classList.contains("increase") &&
+                !e.target.classList.contains("decrease") &&
+                !e.target.classList.contains("quantity")
+            ) {
+                openModal(product);
+            }
+        });
 
         grid.appendChild(card);
     });
 
     attachProductEvents();
 }
-
 
 /* ==============================
    3️⃣ QUANTITY + CART LOGIC
@@ -615,7 +614,6 @@ let cartItems = [];
 
 function attachProductEvents() {
     document.querySelectorAll(".product").forEach(product => {
-
         const decreaseBtn = product.querySelector(".decrease");
         const increaseBtn = product.querySelector(".increase");
         const quantityInput = product.querySelector(".quantity");
@@ -632,16 +630,12 @@ function attachProductEvents() {
         };
 
         addToCartBtn.onclick = () => {
-
             const img = product.querySelector("img");
-
-            // 🔥 Trigger animation
             flyToCart(img);
 
             const name = product.querySelector("h2").textContent;
-            const price = parseInt(
-                product.querySelector("p").textContent.replace("Ksh. ", "")
-            );
+            const priceText = product.querySelector("p").textContent;
+            const price = priceText.includes("Ksh.") ? parseInt(priceText.replace("Ksh. ", "")) : 0;
             const quantity = parseInt(quantityInput.value);
 
             addToCart(name, price, quantity);
@@ -650,7 +644,6 @@ function attachProductEvents() {
 }
 
 function addToCart(name, price, quantity) {
-
     let existingItem = cartItems.find(item => item.name === name);
 
     if (existingItem) {
@@ -696,10 +689,8 @@ function clearCart() {
 
 function toggleCart() {
     const cart = document.getElementById("cart");
-    cart.style.display =
-        cart.style.display === "block" ? "none" : "block";
+    cart.style.display = cart.style.display === "block" ? "none" : "block";
 }
-
 
 /* ==============================
    4️⃣ CATEGORY FILTER AND SEARCH
@@ -707,30 +698,17 @@ function toggleCart() {
 
 function filterProducts(category) {
     if (category === "all") {
-
-        const sorted = [...products].sort((a, b) => a.price - b.price);
-        renderProducts(sorted);
-
+        renderProducts(products);
     } else {
-
-        const filtered = products.filter(
-            product => product.category === category
-        );
-
+        const filtered = products.filter(product => product.category === category);
         renderProducts(filtered);
     }
 }
 
 function levenshtein(a, b) {
     const matrix = [];
-
-    for (let i = 0; i <= b.length; i++) {
-        matrix[i] = [i];
-    }
-
-    for (let j = 0; j <= a.length; j++) {
-        matrix[0][j] = j;
-    }
+    for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+    for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
 
     for (let i = 1; i <= b.length; i++) {
         for (let j = 1; j <= a.length; j++) {
@@ -745,38 +723,30 @@ function levenshtein(a, b) {
             }
         }
     }
-
     return matrix[b.length][a.length];
 }
 
 function searchProducts(keyword) {
     keyword = keyword.toLowerCase().trim();
+    if (!keyword) {
+        renderProducts(products);
+        return;
+    }
 
     const results = products.map(product => {
-
         let score = 0;
-
         const name = product.name.toLowerCase();
         const category = product.category.toLowerCase();
         const keywords = product.keywords || [];
 
-        // 1️⃣ Exact name match (highest priority)
         if (name.includes(keyword)) score += 50;
-
-        // 2️⃣ Category match
         if (category.includes(keyword)) score += 30;
 
-        // 3️⃣ Keyword array match
         keywords.forEach(k => {
             if (k.toLowerCase().includes(keyword)) score += 40;
-
-            // Fuzzy matching
-            if (levenshtein(k.toLowerCase(), keyword) <= 2) {
-                score += 25;
-            }
+            if (levenshtein(k.toLowerCase(), keyword) <= 2) score += 25;
         });
 
-        // 4️⃣ Partial word matching
         const words = name.split(" ");
         words.forEach(word => {
             if (word.startsWith(keyword)) score += 20;
@@ -785,7 +755,6 @@ function searchProducts(keyword) {
         return { product, score };
     });
 
-    // Remove weak matches
     const filtered = results
         .filter(item => item.score > 10)
         .sort((a, b) => b.score - a.score)
@@ -811,49 +780,40 @@ function sendOrder() {
         message += `- ${item.name} (x${item.quantity}) - Ksh. ${item.price * item.quantity}\n`;
     });
 
-    let totalAmount = cartItems.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0
-    );
-
+    let totalAmount = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
     message += `\n*Total Amount: Ksh. ${totalAmount}*`;
 
     let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
 }
 
-
 /* ==============================
    6️⃣ INITIALIZE
 ============================== */
 
 document.addEventListener("DOMContentLoaded", function () {
-
     renderProducts();
 
-    document
-        .getElementById("category-select")
-        .addEventListener("change", function () {
-            filterProducts(this.value);
+    // Category Buttons Filtering Integration
+    const categoryButtons = document.querySelectorAll(".category-icons button");
+    categoryButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            categoryButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            filterProducts(btn.dataset.category);
         });
+    });
 
-    document
-        .getElementById("search-input")
-        .addEventListener("input", function () {
-            searchProducts(this.value);
-        });
-
+    document.getElementById("search-input").addEventListener("input", function () {
+        searchProducts(this.value);
+    });
 });
 
+/* Dragging & Drop Functionality for Cart Icon */
 const cartIcon = document.querySelector(".cart-icon");
-
 let isDragging = false;
 let offsetX = 0;
 let offsetY = 0;
-
-/* ======================
-   DESKTOP (MOUSE)
-====================== */
 
 cartIcon.addEventListener("mousedown", (e) => {
     isDragging = true;
@@ -864,10 +824,8 @@ cartIcon.addEventListener("mousedown", (e) => {
 
 document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
-
     cartIcon.style.left = `${e.clientX - offsetX}px`;
     cartIcon.style.top = `${e.clientY - offsetY}px`;
-
     cartIcon.style.right = "auto";
     cartIcon.style.bottom = "auto";
 });
@@ -876,30 +834,19 @@ document.addEventListener("mouseup", () => {
     isDragging = false;
 });
 
-
-/* ======================
-   MOBILE (TOUCH)
-====================== */
-
 cartIcon.addEventListener("touchstart", (e) => {
     isDragging = true;
-
     const touch = e.touches[0];
-
     offsetX = touch.clientX - cartIcon.getBoundingClientRect().left;
     offsetY = touch.clientY - cartIcon.getBoundingClientRect().top;
-
     cartIcon.style.transition = "none";
 });
 
 document.addEventListener("touchmove", (e) => {
     if (!isDragging) return;
-
     const touch = e.touches[0];
-
     cartIcon.style.left = `${touch.clientX - offsetX}px`;
     cartIcon.style.top = `${touch.clientY - offsetY}px`;
-
     cartIcon.style.right = "auto";
     cartIcon.style.bottom = "auto";
 });
@@ -908,6 +855,7 @@ document.addEventListener("touchend", () => {
     isDragging = false;
 });
 
+/* Modal Quick View Logic */
 const modal = document.getElementById("productModal");
 const modalMainImage = document.getElementById("modalMainImage");
 const modalThumbnails = document.getElementById("modalThumbnails");
@@ -916,26 +864,20 @@ const modalPrice = document.getElementById("modalPrice");
 const closeModal = document.querySelector(".close");
 
 function openModal(product) {
-
     modal.style.display = "flex";
-
     modalName.textContent = product.name;
-    modalPrice.textContent = `Ksh. ${product.price}`;
+    modalPrice.textContent = typeof product.price === 'number' && product.price > 0 ? `Ksh. ${product.price}` : "Price on Request";
 
     const imagesArray = product.images ? product.images : [product.image];
-
     modalMainImage.src = imagesArray[0];
-
     modalThumbnails.innerHTML = "";
 
     imagesArray.forEach(img => {
         const thumb = document.createElement("img");
         thumb.src = img;
-
         thumb.addEventListener("click", () => {
             modalMainImage.src = img;
         });
-
         modalThumbnails.appendChild(thumb);
     });
 }
@@ -948,64 +890,24 @@ window.onclick = (e) => {
     }
 };
 
-const filter = document.querySelector(".filter");
+/* Sticky Header Scroll Shadow */
+const categoryFilterContainer = document.querySelector(".category-filter-container");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
-        filter.style.boxShadow = "0 5px 20px rgba(0,0,0,0.08)";
+        categoryFilterContainer.style.boxShadow = "0 5px 20px rgba(0,0,0,0.08)";
     } else {
-        filter.style.boxShadow = "none";
+        categoryFilterContainer.style.boxShadow = "none";
     }
 });
 
-const categoryButtons = document.querySelectorAll(".category-icons button");
-
-categoryButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-
-        // Remove active from all
-        categoryButtons.forEach(b => b.classList.remove("active"));
-
-        // Add active to clicked
-        btn.classList.add("active");
-
-        const category = btn.dataset.category;
-
-        if (category === "all") {
-            renderProducts(products);
-        } else {
-            const filtered = products.filter(p => p.category === category);
-            renderProducts(filtered);
-        }
-    });
-});
-
-const categoryIcons = document.getElementById("categoryIcons");
-const leftBtn = document.querySelector(".scroll-btn.left");
-const rightBtn = document.querySelector(".scroll-btn.right");
-
-leftBtn.addEventListener("click", () => {
-    categoryIcons.scrollBy({
-        left: -200,
-        behavior: "smooth"
-    });
-});
-
-rightBtn.addEventListener("click", () => {
-    categoryIcons.scrollBy({
-        left: 200,
-        behavior: "smooth"
-    });
-});
-
+/* Flying Animation to Cart */
 function flyToCart(imgElement) {
     const cart = document.querySelector(".cart-icon");
-
     const imgRect = imgElement.getBoundingClientRect();
     const cartRect = cart.getBoundingClientRect();
 
     const flyingImg = imgElement.cloneNode(true);
-
     flyingImg.style.position = "fixed";
     flyingImg.style.left = `${imgRect.left}px`;
     flyingImg.style.top = `${imgRect.top}px`;
@@ -1017,7 +919,6 @@ function flyToCart(imgElement) {
 
     document.body.appendChild(flyingImg);
 
-    // Trigger movement
     setTimeout(() => {
         flyingImg.style.left = `${cartRect.left}px`;
         flyingImg.style.top = `${cartRect.top}px`;
@@ -1026,7 +927,6 @@ function flyToCart(imgElement) {
         flyingImg.style.opacity = "0.5";
     }, 10);
 
-    // Remove after animation
     setTimeout(() => {
         flyingImg.remove();
     }, 800);

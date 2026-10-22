@@ -47,10 +47,28 @@ header {
 }
 
 .nav-container {
-    width: 95%;
+    width: 100%;
     display: flex;
-    align-items: center;   /* vertical center */
-    justify-content: left;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 15px; /* Comfortable breathing room on the edges */
+    box-sizing: border-box;
+}
+
+.nav-container .sofas {
+    margin-left: auto;
+    padding-right: 15px; /* Alignment spacing */
+    display: flex;
+    align-items: center;
+}
+
+.sofas a {
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.sofas a:hover {
+    color: #d4af37 !important; /* Gold accent hover */
+    transform: translateY(-1px);
 }
 
 .logo {

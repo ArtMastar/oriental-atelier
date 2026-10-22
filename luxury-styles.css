@@ -1,5 +1,5 @@
 /* ==========================================================
-   ORIENTAL ATELIER PRESTIGE - ULTRA-LUXURY STYLES
+   ORIENTAL ATELIER SOFAS - ULTRA-LUXURY STYLES
 ========================================================== */
 
 :root {
@@ -152,8 +152,8 @@ a{
     color: #000;
 }
 
-/* Prestige Filter Bar */
-.prestige-filter-bar {
+/* SOFAS Filter Bar */
+.SOFAS-filter-bar {
     padding: 50px 0 30px;
     display: flex;
     justify-content: center;
@@ -187,7 +187,7 @@ a{
 }
 
 /* Gallery Grid */
-.prestige-gallery {
+.SOFAS-gallery {
     width: 90%;
     max-width: 1400px;
     margin: 0 auto 100px;
@@ -433,7 +433,7 @@ a{
 }
 
 /* ==========================================================
-   RESPONSIVE MOBILE ADAPTATIONS FOR PRESTIGE COLLECTION
+   RESPONSIVE MOBILE ADAPTATIONS FOR SOFAS COLLECTION
 ========================================================== */
 
 @media (max-width: 1024px) {
@@ -441,7 +441,7 @@ a{
         font-size: 48px;
     }
     
-    .prestige-gallery {
+    .SOFAS-gallery {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 25px;
         width: 92%;
@@ -495,8 +495,8 @@ a{
         font-size: 11px;
     }
 
-    /* Prestige Filter Bar Scrolling */
-    .prestige-filter-bar {
+    /* SOFAS Filter Bar Scrolling */
+    .SOFAS-filter-bar {
         padding: 30px 15px 20px;
         overflow-x: auto;
         justify-content: flex-start;
@@ -504,7 +504,7 @@ a{
         scrollbar-width: none;
     }
 
-    .prestige-filter-bar::-webkit-scrollbar {
+    .SOFAS-filter-bar::-webkit-scrollbar {
         display: none;
     }
 
@@ -521,7 +521,7 @@ a{
     }
 
     /* Single Column Gallery Grid for Mobile */
-    .prestige-gallery {
+    .SOFAS-gallery {
         grid-template-columns: 1fr;
         gap: 25px;
         width: 90%;

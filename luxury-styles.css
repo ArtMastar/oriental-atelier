@@ -336,6 +336,59 @@ a{
     margin: 10px 0;
 }
 
+/* Color Selection Styling */
+.color-selection-container {
+    margin: 20px 0 10px;
+}
+
+.color-selection-container h4 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--gold-accent);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.color-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.color-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    color: var(--text-main);
+    font-size: 12px;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.color-btn:hover {
+    border-color: var(--gold-accent);
+}
+
+.color-btn.active {
+    border-color: var(--gold-hover);
+    background: rgba(197, 168, 128, 0.15);
+    color: var(--gold-hover);
+    font-weight: 500;
+}
+
 .customization-notes {
     margin: 25px 0;
     padding: 20px 0;

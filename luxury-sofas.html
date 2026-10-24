@@ -56,33 +56,43 @@
     </section>
 
     <!-- Bespoke Inquiry Modal -->
-    <div id="luxuryModal" class="lux-modal">
-        <div class="lux-modal-content">
-            <span class="lux-close">&times;</span>
-            <div class="lux-modal-grid">
-                <div class="lux-modal-img">
-                    <img id="luxModalImage" src="" alt="">
-                </div>
-                <div class="lux-modal-details">
-                    <span class="badge">Limited Edition</span>
-                    <h2 id="luxModalName"></h2>
-                    <p class="lux-price" id="luxModalPrice"></p>
-                    <p class="lux-desc" id="luxModalDesc"></p>
-                    <div class="customization-notes">
-                        <h4>Bespoke Options Available:</h4>
-                        <ul>
-                            <li>Full-Grain Aniline Italian Leather or Cashmere Velvet</li>
-                            <li>Integrated USB-C & Wireless Charging Ports</li>
-                            <li>Zero-Gravity Weightless Recline Technology</li>
-                        </ul>
+<div id="luxuryModal" class="lux-modal">
+    <div class="lux-modal-content">
+        <span class="lux-close">&times;</span>
+        <div class="lux-modal-grid">
+            <div class="lux-modal-img">
+                <img id="luxModalImage" src="" alt="">
+            </div>
+            <div class="lux-modal-details">
+                <span class="badge">Limited Edition</span>
+                <h2 id="luxModalName"></h2>
+                <p class="lux-price" id="luxModalPrice"></p>
+                <p class="lux-desc" id="luxModalDesc"></p>
+
+                <!-- Color Selection Section -->
+                <div class="color-selection-container">
+                    <h4>Select Finish & Color:</h4>
+                    <div class="color-options" id="luxModalColors">
+                        <!-- Color buttons injected dynamically via JavaScript -->
                     </div>
-                    <button class="concierge-order-btn" id="conciergeOrderBtn">
-                        <i class="fab fa-whatsapp"></i> Inquire via Private Concierge
-                    </button>
                 </div>
+
+                <div class="customization-notes">
+                    <h4>Bespoke Options Available:</h4>
+                    <ul>
+                        <li>Full-Grain Aniline Italian Leather or Cashmere Velvet</li>
+                        <li>Integrated USB-C & Wireless Charging Ports</li>
+                        <li>Zero-Gravity Weightless Recline Technology</li>
+                    </ul>
+                </div>
+
+                <button class="concierge-order-btn" id="conciergeOrderBtn">
+                    <i class="fab fa-whatsapp"></i> Inquire via Private Concierge
+                </button>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Luxury Footer -->
     <footer class="luxury-footer">

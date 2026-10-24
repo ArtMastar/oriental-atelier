@@ -158,6 +158,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+    // 🔗 Check if URL contains a luxury product hash on page load (e.g. luxury-sofas.html#luxury-101)
+    if (window.location.hash) {
+        const hashId = window.location.hash.replace("#luxury-", "");
+        const matchedLuxuryProduct = luxuryProducts.find(p => p.id == hashId);
+        
+        if (matchedLuxuryProduct) {
+            setTimeout(() => {
+                openLuxuryModal(matchedLuxuryProduct);
+            }, 300);
+        }
+    }
 });
 
 function renderLuxuryGallery(items) {
@@ -191,27 +202,25 @@ const closeModal = document.querySelector(".lux-close");
 let selectedColorName = "";
 
 function openLuxuryModal(product) {
+    // Update browser URL hash so it's shareable (e.g. #luxury-101)
+    history.pushState(null, null, `#luxury-${product.id}`);
+
     const modalImage = document.getElementById("luxModalImage");
     const colorsContainer = document.getElementById("luxModalColors");
 
-    // Populate static fields
     document.getElementById("luxModalName").textContent = product.name;
     document.getElementById("luxModalPrice").textContent = product.price;
     document.getElementById("luxModalDesc").textContent = product.description;
 
-    // Clear previous color options
     colorsContainer.innerHTML = "";
 
-    // Load Variants (or default fallback)
     const variants = product.variants && product.variants.length > 0 
         ? product.variants 
         : [{ colorName: "Standard Finish", hex: "#c5a880", image: product.image }];
 
-    // Set initial active variant
     modalImage.src = variants[0].image;
     selectedColorName = variants[0].colorName;
 
-    // Render Color Selection Buttons
     variants.forEach((variant, index) => {
         const btn = document.createElement("button");
         btn.className = `color-btn ${index === 0 ? "active" : ""}`;
@@ -221,11 +230,9 @@ function openLuxuryModal(product) {
         `;
 
         btn.addEventListener("click", () => {
-            // Update active state
             document.querySelectorAll(".color-btn").forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
 
-            // Update modal image with smooth transition
             modalImage.style.opacity = "0.4";
             setTimeout(() => {
                 modalImage.src = variant.image;
@@ -238,7 +245,6 @@ function openLuxuryModal(product) {
         colorsContainer.appendChild(btn);
     });
 
-    // Configure WhatsApp Concierge Button
     const whatsappBtn = document.getElementById("conciergeOrderBtn");
     whatsappBtn.onclick = function() {
         let phoneNumber = "254745485817";
@@ -249,6 +255,19 @@ function openLuxuryModal(product) {
 
     modal.style.display = "flex";
 }
+
+// Clear URL hash when closing the luxury modal
+closeModal.onclick = () => {
+    modal.style.display = "none";
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+};
+
+window.onclick = (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+};
 
 closeModal.onclick = () => modal.style.display = "none";
 window.onclick = (e) => {

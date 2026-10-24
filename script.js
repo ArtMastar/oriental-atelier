@@ -791,6 +791,28 @@ function sendOrder() {
    6️⃣ INITIALIZE
 ============================== */
 
+/* ==========================================================
+   🔗 URL HASH MODAL AUTO-OPENER
+========================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+    renderProducts();
+
+    // ... your existing category and search event listeners ...
+
+    // Check if URL contains a product hash on page load (e.g. index.html#product-1)
+    if (window.location.hash) {
+        const hashId = window.location.hash.replace("#product-", "");
+        const matchedProduct = products.find(p => p.id == hashId);
+        
+        if (matchedProduct) {
+            // Small timeout ensures the DOM is fully settled before opening modal
+            setTimeout(() => {
+                openModal(matchedProduct);
+            }, 300);
+        }
+    }
+});
 document.addEventListener("DOMContentLoaded", function () {
     renderProducts();
 
@@ -883,6 +905,10 @@ const closeModal = document.querySelector(".close");
 
 function openModal(product) {
     modal.style.display = "flex";
+
+    // Update the browser URL hash so it's easily shareable
+    history.pushState(null, null, `#product-${product.id}`);
+
     modalName.textContent = product.name;
     modalPrice.textContent = typeof product.price === 'number' && product.price > 0 ? `Ksh. ${product.price}` : "Price on Request";
 
@@ -900,11 +926,16 @@ function openModal(product) {
     });
 }
 
-closeModal.onclick = () => modal.style.display = "none";
+closeModal.onclick = () => {
+    modal.style.display = "none";
+    // Clear the product hash from the URL without reloading the page
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+};
 
 window.onclick = (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
+        history.pushState("", document.title, window.location.pathname + window.location.search);
     }
 };
 

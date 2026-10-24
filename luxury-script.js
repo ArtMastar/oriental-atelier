@@ -5,69 +5,135 @@
 const luxuryProducts = [
     {
         id: 101,
-        name: "The Sovereign Imperial Electric Recliner",
-        price: "Ksh. 185,000",
-        category: "electric",
+        name: "7 Seater recliner Sofa",
+        price: "Ksh. 165,000",
+        category: "Normal Recliner",
         tag: "Motorized Flagship",
-        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800",
+        image: "/products/sofas/7SV.webp",
         description: "Engineered with dual silent German OKIN motors, independent headrest adjustment, and full zero-gravity weightless elevation upholstered in full-grain Italian calfskin.",
         variants: [
             {
-                colorName: "Obsidian Black",
-                hex: "#111111",
-                image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800"
+                colorName: "Grey Silver",
+                hex: "#6e6c6c",
+                image: "/products/sofas/7SV.webp"
             },
             {
-                colorName: "Cognac Tan",
-                hex: "#9e5828",
-                image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800"
+                colorName: "Dark Blue",
+                hex: "#0d0f2b",
+                image: "/products/sofas/7DB.webp"
             },
             {
-                colorName: "Champagne Cream",
-                hex: "#e8e1d5",
-                image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=800"
+                colorName: "Cream White",
+                hex: "#f1ede5",
+                image: "/products/sofas/7CW.webp"
+            },
+            {
+                colorName: "Coffee Brown",
+                hex: "#794e04",
+                image: "/products/sofas/7OCF.webp"
             }
         ]
     },
     {
         id: 102,
-        name: "Milano Prestige Home Cinema Suite",
-        price: "Ksh. 340,000",
-        category: "sectional",
+        name: "6 Seater Recliner SOfa",
+        price: "Ksh. 140,000",
+        category: "Normal Recliner",
         tag: "Bespoke Modular",
-        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800",
+        image: "/products/sofas/6CW.webp",
         description: "A masterwork in architectural luxury. Features integrated cooling cup holders, touch-capacitive motion controls, and diamond-quilted top-grain leather.",
         variants: [
             {
-                colorName: "Emerald Green",
-                hex: "#1a3c2e",
-                image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800"
+                colorName: "Grey Silver",
+                hex: "#6e6c6c",
+                image: "/products/sofas/6SV.webp"
             },
             {
-                colorName: "Midnight Navy",
-                hex: "#121b2d",
-                image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&q=80&w=800"
+                colorName: "Dark Blue",
+                hex: "#0d0f2b",
+                image: "/products/sofas/6DB.webp"
+            },
+            {
+                colorName: "Cream White",
+                hex: "#f1ede5",
+                image: "/products/sofas/6CW.webp"
+            },
+            {
+                colorName: "Coffee Brown",
+                hex: "#794e04",
+                image: "/products/sofas/6OCF.webp"
             }
         ]
     },
     {
         id: 103,
-        name: "Aura Zero-Gravity Executive Recliner",
-        price: "Ksh. 145,000",
-        category: "recliners",
+        name: "3 Seater Recliner Sofa",
+        price: "Ksh. 68,000",
+        category: "Normal Recliner",
         tag: "Ergonomic Masterpiece",
-        image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800",
+        image: "/products/sofas/3BR.webp",
         description: "Designed for elite home offices and private libraries. Combines classic mid-century lines with whisper-quiet electric reclining mechanics.",
         variants: [
             {
-                colorName: "Cognac Tan",
-                hex: "#9e5828",
-                image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800"
+                colorName: "Grey Silver",
+                hex: "#6e6c6c",
+                image: "/products/sofas/3SV.webp"
             },
             {
-                colorName: "Classic Black",
-                hex: "#1a1a1a",
-                image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800"
+                colorName: "Dark Blue",
+                hex: "#0d0f2b",
+                image: "/products/sofas/3DB.webp"
+            },
+            {
+                colorName: "Cream White",
+                hex: "#f1ede5",
+                image: "/products/sofas/3CW.webp"
+            },
+            {
+                colorName: "Coffee Brown",
+                hex: "#794e04",
+                image: "/products/sofas/3OCF.webp"
+            },
+            {
+                colorName: "Desert Brown",
+                hex: "#ecb351",
+                image: "/products/sofas/3BR.webp"
+            }
+        ]
+    },
+    {
+        id: 104,
+        name: "2 Seater Recliner Sofa",
+        price: "Ksh. 55,000",
+        category: "Normal Recliner",
+        tag: "Ergonomic Masterpiece",
+        image: "/products/sofas/2BR.webp",
+        description: "Designed for elite home offices and private libraries. Combines classic mid-century lines with whisper-quiet electric reclining mechanics.",
+        variants: [
+            {
+                colorName: "Desert Brown",
+                hex: "#ecb351",
+                image: "/products/sofas/2BR.webp"
+            },
+            {
+                colorName: "Grey Silver",
+                hex: "#6e6c6c",
+                image: "/products/sofas/2SV.webp"
+            },
+            {
+                colorName: "Dark Blue",
+                hex: "#0d0f2b",
+                image: "/products/sofas/2DB.webp"
+            },
+            {
+                colorName: "Cream White",
+                hex: "#f1ede5",
+                image: "/products/sofas/2CW.webp"
+            },
+            {
+                colorName: "Coffee Brown",
+                hex: "#794e04",
+                image: "/products/sofas/2OCF.webp"
             }
         ]
     }

@@ -284,6 +284,7 @@ a{
 .lux-modal {
     display: none;
     position: fixed;
+    max-height: 90vh;
     inset: 0;
     background: rgba(0,0,0,0.9);
     backdrop-filter: blur(10px);
